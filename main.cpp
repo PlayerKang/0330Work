@@ -1,4 +1,5 @@
 #include <iostream>
+#include<conio.h>
 
 using namespace std;
 
@@ -17,11 +18,43 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1}
 	};
 
+	int PlayerX = 1;
+	int PlayerY = 1;
+	bool bIsRunning = true;
 
-	while (true)
+	while (true) //GameLoop
 	{
-		int PlayerX = 1;
-		int PlayerY = 1;
+
+		//Frame 한 장을 그린다
+		
+		//어떤 엔진이든 하는 3가지
+		//Input();
+		char Key;
+		Key = _getch();
+		//Tick();
+		if (Key == 'd')
+		{
+			PlayerX++;
+		}
+		else if (Key == 'a')
+		{
+			PlayerX--;
+		}
+		else if (Key == 's')
+		{
+			PlayerY++;
+		}
+		else if (Key == 'w')
+		{
+			PlayerY--;
+		}
+		else if (Key == 'q')
+		{
+			bIsRunning = false;
+		}
+
+		//Render();
+		system("cls");  // 지우기, 실제로는 사용X, cls 대신 다른걸 쓸 수 있어서 해킹당함
 
 		for (int Y = 0; Y < 10; ++Y)
 		{
@@ -42,7 +75,6 @@ int main()
 			}
 			cout << endl;
 		}
-		system("cls"); // 지우기, 실제로는 사용X, cls 대신 다른걸 쓸 수 있어서 해킹당함
 	}
 	
 	return 0;
