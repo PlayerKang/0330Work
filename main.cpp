@@ -40,6 +40,7 @@ class WildBoar : public Monster
 int main()
 {
 	// 주석 추가 1
+	// 주석 추가 2
 	
 	return 0;
 }
